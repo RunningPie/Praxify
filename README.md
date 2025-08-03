@@ -49,7 +49,7 @@ This project is a monorepo containing the `frontend` and `api` (backend) directo
 ### Prerequisites
 
 - Node.js and npm
-- Python 3.9+
+- Python 3.11+
 - Vercel CLI
 
 ### Running Locally

@@ -18,7 +18,7 @@ The backend follows a serverless architecture, where each API endpoint is a self
 
 ## 🛠️ Technology Stack
 
-- **Runtime**: Python 3.9+
+- **Runtime**: Python 3.11+
 - **Framework**: FastAPI (used for data validation with Pydantic, though not as a traditional server)
 - **AI**: Google Gemini API
 - **NLP**: NLTK / spaCy (for custom validation logic)
