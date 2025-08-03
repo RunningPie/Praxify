@@ -1,13 +1,25 @@
+import warnings
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 
-from app.routers import elicit
+from app.routers import elicit, validate
 from app.core.config import settings
+
+# Suppress Pydantic field shadowing warnings from Google Generative AI SDK
+warnings.filterwarnings("ignore", message="Field name .* shadows an attribute in parent")
 
 # Load environment variables
 load_dotenv()
+
+# Debug environment variables
+print("🔧 Starting Praxify API...")
+print(f"🔑 GEMINI_API_KEY available: {bool(os.getenv('GEMINI_API_KEY'))}")
+if os.getenv('GEMINI_API_KEY'):
+    print(f"🔑 GEMINI_API_KEY preview: {os.getenv('GEMINI_API_KEY')[:10]}...")
+else:
+    print("❌ GEMINI_API_KEY not found in environment variables")
 
 # Create FastAPI app
 app = FastAPI(
@@ -29,6 +41,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(elicit.router, prefix="/api", tags=["elicitation"])
+app.include_router(validate.router, prefix="/api", tags=["validation"])
 
 @app.get("/")
 async def root():

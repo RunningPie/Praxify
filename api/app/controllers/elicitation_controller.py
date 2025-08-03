@@ -22,10 +22,16 @@ class ElicitationController:
             ElicitationResponse: Structured response with questions and personas
         """
         try:
+            print(f"🎯 Processing elicitation request...")
+            print(f"📝 Request idea: {request.idea[:100]}...")
+            
             # Generate content using Gemini AI
+            print(f"🤖 Calling Gemini service...")
             ai_response = gemini_service.generate_elicitation_content(request.idea)
+            print(f"✅ Received AI response: {ai_response}")
             
             # Convert AI response to structured models
+            print(f"🔄 Converting AI response to structured models...")
             questions = [
                 ClarifyingQuestion(
                     question=q["question"],
@@ -34,6 +40,7 @@ class ElicitationController:
                 )
                 for q in ai_response.get("questions", [])
             ]
+            print(f"❓ Created {len(questions)} questions")
             
             personas = [
                 UserPersona(
@@ -45,6 +52,7 @@ class ElicitationController:
                 )
                 for p in ai_response.get("personas", [])
             ]
+            print(f"👥 Created {len(personas)} personas")
             
             # Create response
             response = ElicitationResponse(
@@ -54,10 +62,15 @@ class ElicitationController:
                 next_steps=ai_response.get("next_steps", [])
             )
             
+            print(f"✅ Successfully created ElicitationResponse")
             logger.info(f"Successfully processed elicitation for idea: {request.idea[:50]}...")
             return response
             
         except Exception as e:
+            print(f"❌ Error in process_elicitation: {str(e)}")
+            print(f"❌ Error type: {type(e)}")
+            import traceback
+            print(f"❌ Full traceback: {traceback.format_exc()}")
             logger.error(f"Error processing elicitation: {str(e)}")
             raise HTTPException(
                 status_code=500,

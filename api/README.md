@@ -67,7 +67,16 @@ All endpoints are located under the `/api/` path.
     pip install -r requirements.txt
     ```
 
-4.  **Set up environment variables**
+4.  **Set up spaCy NER model (for enhanced validation)**
+    ```bash
+    python setup_spacy.py
+    ```
+    Or manually:
+    ```bash
+    python -m spacy download en_core_web_sm
+    ```
+
+5.  **Set up environment variables**
     - Create a file named `.env` in the root directory.
     - Add your API keys and Supabase credentials:
       ```
@@ -76,7 +85,7 @@ All endpoints are located under the `/api/` path.
       SUPABASE_KEY="your_supabase_service_role_key"
       ```
 
-5.  **Run the local development server**
+6.  **Run the local development server**
     - You will need the Vercel CLI for this.
     ```bash
     npm install -g vercel
