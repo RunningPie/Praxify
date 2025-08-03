@@ -6,21 +6,25 @@ This is the frontend for Praxify, a modern, responsive Single-Page Application (
 
 ## ✨ Key Features
 
-- **Interactive Editor**: A minimalist, distraction-free text editor for writing and structuring requirements.
-- **AI Assistant Panel**: A dynamic side panel that provides real-time feedback, questions, and validation results from the AI.
-- **Diagram Visualization**: Renders architectural diagrams directly in the browser using the Mermaid.js library.
-- **Responsive Design**: Fully responsive layout built with Tailwind CSS, ensuring a great experience on any screen size (though desktop-first).
+- **Landing Page**: Professional landing page showcasing Praxify's value proposition and features
+- **Interactive Editor**: A minimalist, distraction-free text editor for writing and structuring requirements
+- **AI Assistant Panel**: A dynamic side panel that provides real-time feedback, questions, and validation results from the AI
+- **Live Validation**: Real-time requirement quality checking with debounced validation calls
+- **Diagram Visualization**: Renders architectural diagrams directly in the browser using the Mermaid.js library
+- **Responsive Design**: Fully responsive layout built with Tailwind CSS, ensuring a great experience on any screen size (though desktop-first)
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Framework**: React (with Vite)
+- **Framework**: React 18 (with Vite)
 - **UI Components**: ShadCN/UI
 - **Styling**: Tailwind CSS
-- **State Management**: React Context or Zustand
-- **Data Fetching**: `fetch` API or `react-query`
-- **Database Client**: `@supabase/supabase-js`
+- **State Management**: React Context API
+- **Data Fetching**: Native `fetch` API
+- **Backend Integration**: Direct API calls to FastAPI backend
+- **Icons**: Lucide React
+- **Charts/Diagrams**: Mermaid.js (for architectural diagrams)
 
 ---
 
@@ -28,12 +32,17 @@ This is the frontend for Praxify, a modern, responsive Single-Page Application (
 
 A simplified overview of the `/src` directory:
 
-- **`/components`**: Reusable UI components (e.g., buttons, modals, editor).
-  - **`/ui`**: Auto-generated components from ShadCN/UI.
-- **`/pages`** (or `/views`): The main workspace view and landing page.
-- **`/lib`**: Utility functions, including the Supabase client setup.
-- **`/hooks`**: Custom React hooks for managing state or side effects.
-- **`App.jsx`**: The main application component and router.
+- **`/components`**: Reusable UI components
+  - **`/ui`**: Auto-generated components from ShadCN/UI
+  - **`/landing`**: Landing page specific components
+  - **`/workspace`**: Workspace/editor specific components
+- **`/pages`**: Main application pages
+  - **`/LandingPage.jsx`**: The landing page component
+  - **`/WorkspacePage.jsx`**: The main workspace with editor and AI panel
+- **`/lib`**: Utility functions and API clients
+- **`/hooks`**: Custom React hooks for managing state or side effects
+- **`/styles`**: Global styles and Tailwind configuration
+- **`App.jsx`**: The main application component and router
 
 ---
 
@@ -51,10 +60,9 @@ A simplified overview of the `/src` directory:
 
 3.  **Set up environment variables**
     - Create a file named `.env.local` in the `/frontend` directory.
-    - Add your public-facing Supabase credentials:
+    - Add your backend API URL:
       ```
-      VITE_SUPABASE_URL="your_supabase_project_url"
-      VITE_SUPABASE_ANON_KEY="your_supabase_anon_key"
+      VITE_API_URL="http://localhost:8000"
       ```
 
 4.  **Run the development server**
@@ -62,3 +70,13 @@ A simplified overview of the `/src` directory:
     npm run dev
     ```
     The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+
+---
+
+## 🎨 Design System
+
+- **Primary Colors**: Purple gradients (#8B5CF6 to #7C3AED)
+- **Secondary Colors**: Light blue accents (#3B82F6)
+- **Background**: White (#FFFFFF) and light purple (#F3F4F6)
+- **Typography**: Modern sans-serif with clear hierarchy
+- **Components**: Rounded corners, subtle shadows, and smooth transitions
