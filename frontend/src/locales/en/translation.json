@@ -1,0 +1,71 @@
+{
+  "header": {
+    "home": "Home",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "tryNow": "Try Now!"
+  },
+  "landing": {
+    "title": "Transform Your Ideas",
+    "subtitle": "Into Clear Requirements",
+    "description": "Praxify helps non-technical users create clear, structured software requirements with AI assistance.",
+    "vision": "Praxify ensures your vision is clear, complete, and understood by everyone.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "readyToSupercharge": "Ready To Supercharge Your Ideas?",
+    "tryPraxifyNow": "Try Praxify Now"
+  },
+  "workspace": {
+    "createNew": "Create New",
+    "projects": "Projects",
+    "recentProjects": "Recent Projects",
+    "settings": "Settings"
+  },
+  "chatbot": {
+    "typeMessage": "Type your message...",
+    "send": "Send",
+    "quickResponses": "Quick responses",
+    "welcomeMessage": "Great! I'd love to help you develop this project idea. Let me ask some clarifying questions to better understand your requirements.",
+    "processingMessage": "Thank you for the additional information! I'm processing your response and will provide more specific guidance based on what you've shared.",
+    "errorMessage": "I apologize, but I'm having trouble connecting to the AI service right now. Please try again later."
+  },
+  "projectDialog": {
+    "title": "Start Your Project",
+    "tellUsAbout": "Tell us about your project idea",
+    "whatsYourIdea": "What's your project idea?",
+    "description": "Describe your project in plain language. Don't worry about technical details - our AI assistant will help you refine and structure your requirements.",
+    "placeholder": "Describe your project concept, goals, or requirements...",
+    "characters": "500 characters",
+    "needInspiration": "Need inspiration? Try these examples:",
+    "examples": {
+      "taskManagement": "A task management app for remote teams",
+      "ecommerce": "An e-commerce website for handmade crafts",
+      "fitness": "A fitness tracking app with social features",
+      "restaurant": "A restaurant reservation system"
+    },
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "starting": "Starting...",
+    "footer": "Your project idea will be analyzed by our AI assistant to generate clarifying questions and help you create comprehensive requirements."
+  },
+  "textEditor": {
+    "projectTitle": "Project Title",
+    "startTyping": "Start typing here...",
+    "validating": "Validating...",
+    "score": "Score"
+  },
+  "validation": {
+    "qualityScore": "Quality Score",
+    "issuesFound": "Issues Found"
+  },
+  "footer": {
+    "copyright": "© 2024 Praxify. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+} 

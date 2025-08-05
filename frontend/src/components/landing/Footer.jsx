@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="bg-primary-800 text-white py-12">
       <div className="container mx-auto px-6 text-center">
@@ -17,7 +20,7 @@ function Footer() {
 
         {/* Copyright */}
         <p className="text-sm text-primary-300">
-          All Rights Reserved © Dama D. Daliman 2025
+          {t('footer.copyright')}
         </p>
       </div>
     </footer>

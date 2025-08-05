@@ -1,7 +1,9 @@
 import { ArrowRight, Rocket, Palette, PenTool, Code, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function Hero() {
+  const { t } = useTranslation()
   return (
     <section className="bg-gradient-to-b from-primary-600 to-primary-700 text-white pt-32 pb-20">
       <div className="container mx-auto px-6">
@@ -9,26 +11,24 @@ function Hero() {
           {/* Left Side - Text Content */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Turn Vague Ideas
+              {t('landing.title')}
               <br />
-              Into Project Ready
-              <br />
-              Specs
+              {t('landing.subtitle')}
             </h1>
             
             <p className="text-xl text-primary-100 max-w-2xl">
-              More than 50% of IT Projects Fail because developers can't fully translate user requirements into project specifications.
+              {t('landing.description')}
             </p>
             
             <p className="text-lg text-primary-200 max-w-2xl">
-              Praxify ensures your vision is clear, complete, and understood by everyone.
+              {t('landing.vision')}
             </p>
             
             <Link
               to="/workspace"
               className="btn-secondary inline-flex items-center space-x-2 text-lg"
             >
-              <span>Try Praxify for Free!</span>
+              <span>{t('landing.getStarted')}</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

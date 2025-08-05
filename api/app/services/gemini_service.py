@@ -115,7 +115,7 @@ Focus on:
 Choose question categories from this list: functional, technical, business, user, legal/compliance
 
 Ensure all questions are specific and actionable.
-Provide your response in a friendly and conversational tone.
+Provide your response in a friendly and conversational tone. Use Bahasa Indonesia.
 """
     
     def _parse_elicitation_response(self, content: str) -> Dict[str, Any]:

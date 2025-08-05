@@ -1,23 +1,25 @@
 import { MessageSquare, FileText, PencilLine, ArrowDown } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 function PraxifyFlow() {
+  const { t } = useLanguage()
   const steps = [
     {
       icon: <PencilLine className="w-8 h-8 text-white" />,
-      title: "Describe Your Vision",
-      description: "Write your initial project idea in plain language. No technical knowledge required.",
+      title: t("Describe Your Vision"),
+      description: t("Write your initial project idea in plain language. No technical knowledge required."),
       color: "from-primary-600 to-primary-700"
     },
     {
       icon: <MessageSquare className="w-8 h-8 text-white" />,
-      title: "Collab with AI",
-      description: "Praxify Assistant helps refine and structure your requirements.",
+      title: t("Collab with AI"),
+      description: t("Praxify Assistant helps refine and structure your requirements."),
       color: "from-secondary-600 to-secondary-700"
     },
     {
       icon: <FileText className="w-8 h-8 text-white" />,
-      title: "Generate Specs",
-      description: "Get validated requirements and diagrams instantly.",
+      title: t("Generate Specs"),
+      description: t("Get validated requirements and diagrams instantly."),
       color: "from-primary-500 to-primary-600"
     }
   ];
@@ -37,9 +39,9 @@ function PraxifyFlow() {
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                   {step.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <h3 className="text-xl font-semibold">{t(step.title)}</h3>
               </div>
-              <p className="text-white/90 text-sm">{step.description}</p>
+              <p className="text-white/90 text-sm">{t(step.description)}</p>
             </div>
           )).flatMap((component, index, arr) => index < arr.length - 1
             ? [component, <ArrowDown key={`arrow-${index}`} className="text-primary-400 w-8 h-8" />]

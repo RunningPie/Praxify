@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { X, Rocket, ArrowRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
+  const { t } = useTranslation()
   const [projectIdea, setProjectIdea] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -28,8 +30,8 @@ function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
                 <Rocket className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-800">Start Your Project</h2>
-                <p className="text-gray-600">Tell us about your project idea</p>
+                <h2 className="text-2xl font-bold text-gray-800">{t('projectDialog.title')}</h2>
+                <p className="text-gray-600">{t('projectDialog.tellUsAbout')}</p>
               </div>
             </div>
             <button
@@ -45,34 +47,33 @@ function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
         <form onSubmit={handleSubmit} className="px-8 py-6">
           <div className="mb-6">
             <label htmlFor="projectIdea" className="block text-lg font-semibold text-gray-800 mb-3">
-              What's your project idea?
+              {t('projectDialog.whatsYourIdea')}
             </label>
             <p className="text-gray-600 mb-4">
-              Describe your project in plain language. Don't worry about technical details - 
-              our AI assistant will help you refine and structure your requirements.
+              {t('projectDialog.description')}
             </p>
             <textarea
               id="projectIdea"
               value={projectIdea}
               onChange={(e) => setProjectIdea(e.target.value)}
-              placeholder="Example: I want to build a mobile app that helps people track their daily water intake and reminds them to stay hydrated throughout the day..."
+              placeholder={t('projectDialog.placeholder')}
               className="w-full h-40 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
               required
             />
             <div className="mt-2 text-sm text-gray-500">
-              {projectIdea.length}/500 characters
+              {projectIdea.length}/{t('projectDialog.characters')}
             </div>
           </div>
 
           {/* Examples */}
           <div className="mb-6">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Need inspiration? Try these examples:</h3>
+            <h3 className="text-sm font-semibold text-gray-700 mb-3">{t('projectDialog.needInspiration')}</h3>
             <div className="space-y-2">
               {[
-                "A task management app for remote teams",
-                "An e-commerce website for handmade crafts",
-                "A fitness tracking app with social features",
-                "A restaurant reservation system"
+                t('projectDialog.examples.taskManagement'),
+                t('projectDialog.examples.ecommerce'),
+                t('projectDialog.examples.fitness'),
+                t('projectDialog.examples.restaurant')
               ].map((example, index) => (
                 <button
                   key={index}
@@ -93,7 +94,7 @@ function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
               onClick={onClose}
               className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              Cancel
+              {t('projectDialog.cancel')}
             </button>
             <button
               type="submit"
@@ -103,11 +104,11 @@ function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
               {isSubmitting ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  <span>Starting...</span>
+                  <span>{t('projectDialog.starting')}</span>
                 </>
               ) : (
                 <>
-                  <span>Start Project</span>
+                  <span>{t('projectDialog.submit')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
@@ -118,8 +119,7 @@ function ProjectIdeaDialog({ isOpen, onClose, onSubmit }) {
         {/* Footer */}
         <div className="px-8 py-4 bg-gray-50 rounded-b-xl">
           <p className="text-xs text-gray-500 text-center">
-            Your project idea will be analyzed by our AI assistant to generate clarifying questions 
-            and help you create comprehensive requirements.
+            {t('projectDialog.footer')}
           </p>
         </div>
       </div>

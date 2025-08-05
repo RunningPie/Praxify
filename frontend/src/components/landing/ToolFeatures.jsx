@@ -1,17 +1,19 @@
 import { Building2, Store } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 function ToolFeatures() {
+  const { t } = useLanguage()
   const features = [
     {
       icon: <Building2 className="w-10 h-10 text-white" />,
-      title: "Government",
-      description: "Accelerate digital transformation in public services.",
+      title: t("Government"),
+      description: t("Accelerate digital transformation in public services."),
       gradient: "from-primary-600 to-primary-700"
     },
     {
       icon: <Store className="w-10 h-10 text-white" />,
-      title: "Business Owners",
-      description: "Clarify your digital vision for developers from day one.",
+      title: t("Business Owners"),
+      description: t("Clarify your digital vision for developers from day one."),
       gradient: "from-secondary-600 to-secondary-700"
     }
   ];
@@ -32,8 +34,8 @@ function ToolFeatures() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-white/90 text-lg">{feature.description}</p>
+                <h3 className="text-2xl font-bold mb-2">{t(feature.title)}</h3>
+                <p className="text-white/90 text-lg">{t(feature.description)}</p>
               </div>
             </div>
           ))}

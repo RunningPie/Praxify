@@ -1,11 +1,15 @@
 import { Home, Plus, FolderOpen, Settings, User } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import LanguageToggle from '../common/LanguageToggle'
 
 function Sidebar({ currentProjectName = "Project 1" }) {
+  const { t } = useTranslation()
+  
   const menuItems = [
-    { icon: Home, label: 'Home', active: false },
-    { icon: Plus, label: 'Create New', active: false },
-    { icon: FolderOpen, label: 'Projects', active: false }
+    { icon: Home, label: t('header.home'), active: false },
+    { icon: Plus, label: t('workspace.createNew'), active: false },
+    { icon: FolderOpen, label: t('workspace.projects'), active: false }
   ]
 
   return (
@@ -41,7 +45,7 @@ function Sidebar({ currentProjectName = "Project 1" }) {
 
                  {/* Projects List */}
          <div className="mt-8">
-           <h3 className="text-purple-300 text-sm font-medium px-4 mb-3">Recent Projects</h3>
+           <h3 className="text-purple-300 text-sm font-medium px-4 mb-3">{t('workspace.recentProjects')}</h3>
            <ul className="space-y-1">
              <li>
                <button className="w-full text-left px-4 py-2 bg-purple-600 text-white rounded-lg transition-colors">
@@ -64,10 +68,15 @@ function Sidebar({ currentProjectName = "Project 1" }) {
 
       {/* Bottom Section */}
       <div className="p-4 border-t border-purple-600">
-        <button className="w-full flex items-center space-x-3 px-4 py-3 text-purple-200 hover:bg-purple-600 hover:text-white rounded-lg transition-colors">
-          <Settings className="w-5 h-5" />
-          <span>Settings</span>
-        </button>
+        {/* Language Toggle */}
+        <div className="mb-3">
+          <LanguageToggle className="w-full justify-center bg-purple-600 border-purple-500 text-black hover:bg-purple-500" />
+        </div>
+        
+                 <button className="w-full flex items-center space-x-3 px-4 py-3 text-purple-200 hover:bg-purple-600 hover:text-white rounded-lg transition-colors">
+           <Settings className="w-5 h-5" />
+           <span>{t('workspace.settings')}</span>
+         </button>
                  <div className="mt-4 flex items-center space-x-3 px-4 py-2 hover:bg-purple-600 hover:text-white rounded-lg transition-colors cursor-pointer">
            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
              <User className="w-4 h-4" />

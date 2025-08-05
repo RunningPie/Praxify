@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send, Bot, User, Loader2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 function ChatbotPanel({ initialMessage, onApiCall }) {
+  const { t } = useTranslation()
   const [messages, setMessages] = useState([])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -16,12 +18,12 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
           content: initialMessage,
           timestamp: new Date()
         },
-        {
-          id: 2,
-          type: 'bot',
-          content: "Great! I'd love to help you develop this project idea. Let me ask some clarifying questions to better understand your requirements.",
-          timestamp: new Date()
-        }
+                 {
+           id: 2,
+           type: 'bot',
+           content: t('chatbot.welcomeMessage'),
+           timestamp: new Date()
+         }
       ])
       
       // Automatically trigger initial elicitation
@@ -70,7 +72,7 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
       setMessages(prev => [...prev, {
         id: Date.now(),
         type: 'bot',
-        content: "I apologize, but I'm having trouble connecting to the AI service right now. Please try again later.",
+        content: t('chatbot.errorMessage'),
         timestamp: new Date()
       }])
     }
@@ -81,11 +83,11 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
     let response = ""
     
     if (data.summary) {
-      response += `**Project Analysis:**\n${data.summary}\n\n`
+      response += t("**Project Analysis:**\n") + data.summary + t("\n\n")
     }
     
     if (data.questions && data.questions.length > 0) {
-      response += "**I have some questions to help clarify your requirements:**\n\n"
+      response += t("**I have some questions to help clarify your requirements:**\n\n")
       data.questions.forEach((question, index) => {
         response += `${index + 1}. ${question}\n`
       })
@@ -93,7 +95,7 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
     }
     
     if (data.personas && data.personas.length > 0) {
-      response += "**Potential Users:**\n"
+      response += t("**Potential Users:**\n")
       data.personas.forEach((persona, index) => {
         response += `• ${persona}\n`
       })
@@ -101,13 +103,13 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
     }
     
     if (data.next_steps && data.next_steps.length > 0) {
-      response += "**Suggested Next Steps:**\n"
+      response += t("**Suggested Next Steps:**\n")
       data.next_steps.forEach((step, index) => {
         response += `${index + 1}. ${step}\n`
       })
     }
     
-    return response || "I've analyzed your project idea. Please feel free to ask me any questions or provide more details!"
+    return response || t("I've analyzed your project idea. Please feel free to ask me any questions or provide more details!")
   }
 
   const handleSendMessage = async () => {
@@ -129,7 +131,7 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
       const botMessage = {
         id: Date.now() + 1,
         type: 'bot',
-        content: "Thank you for the additional information! I'm processing your response and will provide more specific guidance based on what you've shared.",
+        content: t('chatbot.processingMessage'),
         timestamp: new Date()
       }
       setMessages(prev => [...prev, botMessage])
@@ -221,7 +223,7 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
 
       {/* Chat Suggestions */}
       <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
-        <div className="text-xs text-gray-500 mb-2">Quick responses:</div>
+        <div className="text-xs text-gray-500 mb-2">{t('chatbot.quickResponses')}:</div>
         <div className="flex flex-wrap gap-1">
           <button className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full hover:bg-blue-200 transition-colors">
             How quick do you want the response be?
@@ -240,7 +242,7 @@ function ChatbotPanel({ initialMessage, onApiCall }) {
              value={inputValue}
              onChange={(e) => setInputValue(e.target.value)}
              onKeyPress={handleKeyPress}
-             placeholder="Type your message"
+             placeholder={t('chatbot.typeMessage')}
              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
            />
            <button

@@ -12,8 +12,10 @@ import {
   Code,
   AlertCircle
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const TextEditor = forwardRef(({ content, onChange, placeholder, onValidationIssues }, ref) => {
+  const { t } = useTranslation()
   // Use a ref to hold a reference to the editable div
   const editorRef = useRef(null)
   const [validationIssues, setValidationIssues] = useState([])
@@ -144,7 +146,7 @@ const TextEditor = forwardRef(({ content, onChange, placeholder, onValidationIss
       <div className="px-6 py-4 border-b border-gray-200">
         <input
           type="text"
-          placeholder="Project Title"
+          placeholder={t('textEditor.projectTitle')}
           className="w-full text-2xl font-bold text-gray-800 placeholder-gray-400 border-none outline-none"
         />
       </div>
@@ -181,7 +183,7 @@ const TextEditor = forwardRef(({ content, onChange, placeholder, onValidationIss
           {isValidating && (
             <div className="flex items-center space-x-1 text-blue-600">
               <div className="w-3 h-3 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-              <span className="text-xs">Validating...</span>
+              <span className="text-xs">{t('textEditor.validating')}</span>
             </div>
           )}
           {validationScore !== null && (
@@ -203,7 +205,7 @@ const TextEditor = forwardRef(({ content, onChange, placeholder, onValidationIss
           contentEditable
           onInput={handleInput}
           // Use the CSS placeholder from Step 1
-          data-placeholder={placeholder || "Start typing here..."}
+          data-placeholder={placeholder || t('textEditor.startTyping')}
           className="min-h-full outline-none text-gray-800 leading-relaxed"
           style={{ fontSize: '16px', lineHeight: '1.6' }}
           // We no longer render content directly, so this is not needed

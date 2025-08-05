@@ -1,0 +1,71 @@
+{
+  "header": {
+    "home": "Beranda",
+    "faq": "FAQ",
+    "contact": "Hubungi Kami",
+    "tryNow": "Coba Sekarang!"
+  },
+  "landing": {
+    "title": "Ubah Ide Anda",
+    "subtitle": "Menjadi Persyaratan yang Jelas",
+    "description": "Praxify membantu pengguna non-teknis membuat persyaratan perangkat lunak yang jelas dan terstruktur dengan bantuan AI.",
+    "vision": "Praxify memastikan visi Anda jelas, lengkap, dan dipahami oleh semua orang.",
+    "getStarted": "Mulai",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "readyToSupercharge": "Siap Untuk Meningkatkan Ide Anda?",
+    "tryPraxifyNow": "Coba Praxify Sekarang"
+  },
+  "workspace": {
+    "createNew": "Buat Baru",
+    "projects": "Proyek",
+    "recentProjects": "Proyek Terbaru",
+    "settings": "Pengaturan"
+  },
+  "chatbot": {
+    "typeMessage": "Ketik pesan Anda...",
+    "send": "Kirim",
+    "quickResponses": "Respons cepat",
+    "welcomeMessage": "Bagus! Saya senang membantu Anda mengembangkan ide proyek ini. Biarkan saya mengajukan beberapa pertanyaan klarifikasi untuk lebih memahami persyaratan Anda.",
+    "processingMessage": "Terima kasih atas informasi tambahan! Saya sedang memproses respons Anda dan akan memberikan panduan yang lebih spesifik berdasarkan apa yang Anda bagikan.",
+    "errorMessage": "Saya mohon maaf, tetapi saya mengalami kesulitan terhubung ke layanan AI saat ini. Silakan coba lagi nanti."
+  },
+  "projectDialog": {
+    "title": "Mulai Proyek Anda",
+    "tellUsAbout": "Ceritakan tentang ide proyek Anda",
+    "whatsYourIdea": "Apa ide proyek Anda?",
+    "description": "Jelaskan proyek Anda dalam bahasa sederhana. Jangan khawatir tentang detail teknis - asisten AI kami akan membantu Anda menyempurnakan dan menyusun persyaratan Anda.",
+    "placeholder": "Jelaskan konsep proyek, tujuan, atau persyaratan Anda...",
+    "characters": "500 karakter",
+    "needInspiration": "Butuh inspirasi? Coba contoh-contoh ini:",
+    "examples": {
+      "taskManagement": "Aplikasi manajemen tugas untuk tim jarak jauh",
+      "ecommerce": "Website e-commerce untuk kerajinan tangan",
+      "fitness": "Aplikasi pelacakan kebugaran dengan fitur sosial",
+      "restaurant": "Sistem reservasi restoran"
+    },
+    "submit": "Kirim",
+    "cancel": "Batal",
+    "starting": "Memulai...",
+    "footer": "Ide proyek Anda akan dianalisis oleh asisten AI kami untuk menghasilkan pertanyaan klarifikasi dan membantu Anda membuat persyaratan yang komprehensif."
+  },
+  "textEditor": {
+    "projectTitle": "Judul Proyek",
+    "startTyping": "Mulai mengetik di sini...",
+    "validating": "Memvalidasi...",
+    "score": "Skor"
+  },
+  "validation": {
+    "qualityScore": "Skor Kualitas",
+    "issuesFound": "Masalah Ditemukan"
+  },
+  "footer": {
+    "copyright": "© 2024 Praxify. Semua hak dilindungi.",
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Ketentuan Layanan"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Kesalahan",
+    "success": "Berhasil"
+  }
+} 
