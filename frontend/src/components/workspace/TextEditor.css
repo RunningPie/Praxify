@@ -1,0 +1,95 @@
+/* TipTap Editor Styles */
+.ProseMirror {
+  min-height: 200px;
+  outline: none;
+  padding: 0;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror p.is-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.ProseMirror h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.ProseMirror li {
+  margin: 0.5em 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid #ddd;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #666;
+}
+
+.ProseMirror pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.ProseMirror code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.ProseMirror a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: #004499;
+}
+
+/* Text alignment classes */
+.ProseMirror .text-left {
+  text-align: left;
+}
+
+.ProseMirror .text-center {
+  text-align: center;
+}
+
+.ProseMirror .text-right {
+  text-align: right;
+} 
