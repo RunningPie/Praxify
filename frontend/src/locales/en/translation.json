@@ -6,9 +6,9 @@
     "tryNow": "Try Now!"
   },
   "landing": {
-    "title": "Transform Your Ideas",
-    "subtitle": "Into Clear Requirements",
-    "description": "Praxify helps non-technical users create clear, structured software requirements with AI assistance.",
+    "title": "Transform Vague Ideas",
+    "subtitle": "Into Project Ready Specs",
+    "description": "More than 50% of IT Projects fail because developers can't fully translate user requirements into project specifications.",
     "vision": "Praxify ensures your vision is clear, complete, and understood by everyone.",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
@@ -62,6 +62,22 @@
     "copyright": "© 2024 Praxify. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "toolFeatures": {
+    "title": "Tool Built For You!",
+    "government": "Government",
+    "governmentDesc": "Accelerate digital transformation in public services.",
+    "businessOwners": "Business Owners",
+    "businessOwnersDesc": "Clarify your digital vision for developers from day one."
+  },
+  "praxifyFlow": {
+    "title": "The Praxify Flow",
+    "describeVision": "Describe Your Vision",
+    "describeVisionDesc": "Write your initial project idea in plain language. No technical knowledge required.",
+    "collabWithAI": "Collab with AI",
+    "collabWithAIDesc": "Praxify Assistant helps refine and structure your requirements.",
+    "generateSpecs": "Generate Specs",
+    "generateSpecsDesc": "Get validated requirements and diagrams instantly."
   },
   "common": {
     "loading": "Loading...",

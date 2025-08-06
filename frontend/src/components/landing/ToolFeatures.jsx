@@ -1,19 +1,19 @@
 import { Building2, Store } from 'lucide-react'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useTranslation } from 'react-i18next'
 
 function ToolFeatures() {
-  const { t } = useLanguage()
+  const { t } = useTranslation()
   const features = [
     {
       icon: <Building2 className="w-10 h-10 text-white" />,
-      title: t("Government"),
-      description: t("Accelerate digital transformation in public services."),
+      title: t("toolFeatures.government"),
+      description: t("toolFeatures.governmentDesc"),
       gradient: "from-primary-600 to-primary-700"
     },
     {
       icon: <Store className="w-10 h-10 text-white" />,
-      title: t("Business Owners"),
-      description: t("Clarify your digital vision for developers from day one."),
+      title: t("toolFeatures.businessOwners"),
+      description: t("toolFeatures.businessOwnersDesc"),
       gradient: "from-secondary-600 to-secondary-700"
     }
   ];
@@ -22,7 +22,7 @@ function ToolFeatures() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary-800 mb-4">Tool Built For You!</h2>
+          <h2 className="text-4xl font-bold text-primary-800 mb-4">{t("toolFeatures.title")}</h2>
         </div>
 
         <div className="space-y-8">
@@ -34,8 +34,8 @@ function ToolFeatures() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">{t(feature.title)}</h3>
-                <p className="text-white/90 text-lg">{t(feature.description)}</p>
+                <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-white/90 text-lg">{feature.description}</p>
               </div>
             </div>
           ))}

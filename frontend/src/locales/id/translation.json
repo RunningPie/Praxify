@@ -63,6 +63,22 @@
     "privacyPolicy": "Kebijakan Privasi",
     "termsOfService": "Ketentuan Layanan"
   },
+  "toolFeatures": {
+    "title": "Alat Dibuat Untuk Anda!",
+    "government": "Pemerintah",
+    "governmentDesc": "Mempercepat transformasi digital dalam layanan publik.",
+    "businessOwners": "Pemilik Bisnis",
+    "businessOwnersDesc": "Jelaskan visi digital Anda kepada pengembang dari hari pertama."
+  },
+  "praxifyFlow": {
+    "title": "Alur Praxify",
+    "describeVision": "Jelaskan Visi Anda",
+    "describeVisionDesc": "Tulis ide proyek awal Anda dalam bahasa sederhana. Tidak memerlukan pengetahuan teknis.",
+    "collabWithAI": "Kolaborasi dengan AI",
+    "collabWithAIDesc": "Asisten Praxify membantu menyempurnakan dan menyusun persyaratan Anda.",
+    "generateSpecs": "Hasilkan Spesifikasi",
+    "generateSpecsDesc": "Dapatkan persyaratan dan diagram yang divalidasi secara instan."
+  },
   "common": {
     "loading": "Memuat...",
     "error": "Kesalahan",
