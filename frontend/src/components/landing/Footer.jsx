@@ -7,9 +7,7 @@ function Footer() {
       <div className="container mx-auto px-6 text-center">
         {/* Logo */}
         <div className="flex items-center justify-center space-x-2 mb-4">
-          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-primary-800 font-bold text-lg">P</span>
-          </div>
+          <img src="/assets/images/white_logo.png" alt="Praxify Logo" className="w-10 h-10" />
           <span className="text-xl font-bold">Praxify</span>
         </div>
 

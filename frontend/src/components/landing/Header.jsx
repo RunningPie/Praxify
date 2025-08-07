@@ -11,9 +11,7 @@ function Header() {
         <div className="flex items-center justify-between">
           {/* Logo - Clickable */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
+            <img src="/assets/images/blue_logo.png" alt="Praxify Logo" className="w-10 h-10" />
             <span className="text-xl font-bold text-gray-800">Praxify</span>
           </Link>
 
